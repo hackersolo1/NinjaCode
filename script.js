@@ -349,10 +349,6 @@ document.addEventListener("DOMContentLoaded", () => {
             addNewCodeBtn.style.display = 'none';
             logoutBtn.style.display = 'none';
             avatarImg.src = "https://ui-avatars.com/api/?name=Guest&background=random&size=128";
-
-            // Volta pra home se estava em outra rota
-            if (location.hash) navigate('');
-            else showView(homeView);
             emailU = 'Desconhecido(a)';
             userName = 'Desconecido(a)';
         }
