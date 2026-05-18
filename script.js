@@ -365,9 +365,6 @@ document.addEventListener("DOMContentLoaded", () => {
     async function signInWithGoogle() {
         const { error } = await supabaseClient.auth.signInWithOAuth({
             provider: 'google',
-            options: {
-                redirectTo: window.location.origin + window.location.pathname
-            }
         });
         if (error) console.error("Erro ao tentar fazer login:", error.message);
 
