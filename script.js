@@ -495,4 +495,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    document.querySelector('.topbar__search-input').addEventListener('input', (e) => {    
+        const value = e.target.value.toLowerCase();
+        const card = snippetsList.querySelectorAll('.snippet-card');
+        card.forEach(c => {
+            if(c.textContent.toLowerCase().includes(value)) {
+                c.style.display = 'flex';
+            } else {
+                c.style.display = 'none';
+            }
+        });
+    });
 });
