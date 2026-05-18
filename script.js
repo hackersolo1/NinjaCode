@@ -359,6 +359,9 @@ document.addEventListener("DOMContentLoaded", () => {
     async function signInWithGoogle() {
         const { error } = await supabaseClient.auth.signInWithOAuth({
             provider: 'google',
+            options: {
+                redirectTo: 'https://ninja-code.vercel.app'
+            }
         });
         if (error) console.error("Erro ao tentar fazer login:", error.message);
 
