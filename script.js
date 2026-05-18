@@ -313,7 +313,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let emailU = null;
     let userName = null;
     supabaseClient.auth.onAuthStateChange((event, session) => {
-        console.log("Evento de Autenticação:", event, session);
 
         if (session && session.user) {
             const user = session.user;
@@ -340,7 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Carrega os snippets do banco e aplica rota inicial
-            renderSnippets().then(() => handleRoute());
+            renderSnippets();
         } else {
             // UI deslogado
             localStorage.removeItem('userInfo');
