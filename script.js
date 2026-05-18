@@ -501,7 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = snippetsList.querySelectorAll('.snippet-card');
         card.forEach(c => {
             if(c.textContent.toLowerCase().includes(value)) {
-                c.style.display = 'flex';
+                c.style.display = 'block';
             } else {
                 c.style.display = 'none';
             }
