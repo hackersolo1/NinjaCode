@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const { data, error } = await supabaseClient
             .from('codes')
             .select('*')
-            .order('created_at', { ascending: false });
+            .order('code_title', { ascending: true });
         if (error) throw error;
         return data || [];
     }
