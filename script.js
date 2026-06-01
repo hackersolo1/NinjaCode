@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ============================================
     //       ELEMENTOS DO DOM
     // ============================================
+    const privateCodes = document.getElementById('privateCodes');
     const addNewCodeBtn = document.getElementById("addNewCodeBtn");
     const modal = document.getElementById("newCodeModal");
     const closeModalBtn = modal.querySelector(".modal__close-btn");
@@ -340,6 +341,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Carrega os snippets do banco e aplica rota inicial
             renderSnippets();
+
+            [privateCodes].forEach((c) => {
+                c.style = 'opacity: 1; cursor: cursor';
+                c.disabled = false;
+                c.title = ''
+            });
         } else {
             // UI deslogado
             localStorage.removeItem('userInfo');
@@ -350,6 +357,12 @@ document.addEventListener("DOMContentLoaded", () => {
             avatarImg.src = "https://ui-avatars.com/api/?name=Guest&background=random&size=128";
             emailU = 'Desconhecido(a)';
             userName = 'Desconecido(a)';
+
+            [privateCodes].forEach((c) => {
+                c.style = 'opacity: 0.5; cursor: not-allowed';
+                c.disabled = true;
+                c.title = 'Faça login para acessar essa seção.'
+            });
         }
     });
 
